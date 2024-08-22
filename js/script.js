@@ -29,6 +29,9 @@ function myfunctionadd() {
           " / " +
           contacts[0].email
       );
+      alert(
+        `First contact: ${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`
+      );
     } else if (userChoice === "last") {
       console.log(
         "Last contact: " +
@@ -37,6 +40,11 @@ function myfunctionadd() {
           contacts[contacts.length - 1].phone +
           " / " +
           contacts[contacts.length - 1].email
+      );
+      alert(
+        `Last contact: ${contacts[contacts.length - 1].name} / ${
+          contacts[contacts.length - 1].phone
+        } / ${contacts[contacts.length - 1].email}`
       );
     } else if (userChoice === "new") {
       let newName = prompt("Enter name:");
@@ -58,6 +66,7 @@ function myfunctionadd() {
       console.log(
         "New contact added: " + newName + " " + newPhone + " " + newEmail
       );
+      alert(`Contact added: ${newName} / ${newPhone} / ${newEmail}`);
     } else if (userChoice === "quit") {
       break;
     }
