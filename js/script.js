@@ -1,22 +1,5 @@
 function myfunctionadd() {
   let userChoice;
-  let contacts = [
-    {
-      name: "Maxwell Wright",
-      phone: "(0191) 719 6495",
-      email: "agent1.@cctb.ca",
-    },
-    {
-      name: "Tom MacDonalds",
-      phone: "(0191) 719 6495",
-      email: "agent2.@cctb.ca",
-    },
-    {
-      name: "Helen Richards",
-      phone: "(0191) 0800 1111",
-      email: "agent3.@cctb.ca",
-    },
-  ];
 
   do {
     userChoice = prompt("Choose an option: first, last, new, or quit");
@@ -67,8 +50,44 @@ function myfunctionadd() {
         "New contact added: " + newName + " " + newPhone + " " + newEmail
       );
       alert(`Contact added: ${newName} / ${newPhone} / ${newEmail}`);
+      display();
     } else if (userChoice === "quit") {
       break;
     }
   } while (true);
+}
+
+let contacts = [
+  {
+    name: "Maxwell Wright",
+    phone: "(0191) 719 6495",
+    email: "agent1.@cctb.ca",
+  },
+  {
+    name: "Tom MacDonalds",
+    phone: "(0191) 777 6495",
+    email: "agent2.@cctb.ca",
+  },
+  {
+    name: "Helen Richards",
+    phone: "(0191) 0800 1111",
+    email: "agent3.@cctb.ca",
+  },
+];
+
+display();
+
+function display() {
+  let contactList = document.getElementById("contactList");
+  contactList.innerHTML = "";
+  for (let i = 0; i < contacts.length; i++) {
+    contactList.innerHTML +=
+      "<li class='list-group-item'>" +
+      contacts[i]["name"] +
+      " / " +
+      contacts[i]["phone"] +
+      " / " +
+      contacts[i]["email"] +
+      "</li>";
+  }
 }
